@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnToyOnTube.Views.listaUbicaciones">
+  <ScrollView>
+    <StackLayout Spacing="10">
+      <Label Text="Seguimiento"
+                       Font="30"
+                       HorizontalOptions="Center"
+                       VerticalOptions  ="Center"
+                       FontAttributes="Bold" />
+      <StackLayout Orientation="Horizontal">
+        <StackLayout Spacing="10">
+          <Label Text="Said Aquino" Font="20"/>
+        </StackLayout>
+        <StackLayout Spacing="10" HorizontalOptions="EndAndExpand" Orientation="Horizontal" >
+          <Label Text="Haz Check In/out" Font="20" />
+          <Switch x:Name="checkinoutSwitch" IsToggled="False" Toggled="checkinoutSwitch_Clicked" />
+        </StackLayout>
+      </StackLayout>
+      <ListView x:Name="ubicaionesListView"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

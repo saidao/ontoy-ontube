@@ -17,6 +17,7 @@ namespace OnToyOnTube.Controllers
         {
             var config = DependencyService.Get<iConfig>();
             connection = new SQLiteConnection(config.Plataforma, System.IO.Path.Combine(config.DirectorioDB, "OnToyOnTube.db3"));
+            connection.CreateTable<Configuracion>();
             connection.CreateTable<Persona>();
             connection.CreateTable<Ubicacion>();
         }
@@ -48,7 +49,6 @@ namespace OnToyOnTube.Controllers
         {
             return connection.GetAllWithChildren<T>().ToList();
         }
-
         public T Find<T>(int Pk) where T : class
         {
             return connection.Table<T>().FirstOrDefault(m => m.GetHashCode() == Pk);
